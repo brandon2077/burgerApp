@@ -1,0 +1,37 @@
+<img src="/assets/images/cowvector.png" height="200px" width="auto">
+
+<h1>Brandon's Burgers</h1>
+
+<h2>Place Your Order Here</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="burg">Burger Desired:</label>
+    <input type="text" id="burg" name="burger_name">
+  </div>
+
+  
+  <button type="submit">Order</button>
+</form>
+
+<h2>Burger Pick Up</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{> burgers/burger-block meal=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Devoured</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+      {{> burgers/burger-block2 meal=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+
